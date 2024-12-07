@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The PoC of the MicroApp Pattern">
+    <meta name="author" content="Suresh Babu Banda">
+    <title>The Hachiko MicroApp</title>
+
+    <!--
+        1. If you are using the same version of jquery and bootstrap as that of control center, no need to load them here.
+        2. If you want to test this micro app locally, you can uncomment the below lines.
+        3. If you are using the different versions of jquery and bootstrap as that of control center, uncomment the below lines but be aware of conflicts.
+        4. You may even consider conditional loading, too.
+    -->
+    <link rel="stylesheet" type="text/css" href="./ref/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./ref/bootstrap/dist/css/bootstrap.min.css">    
+    <script src="./ref/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./ref/jquery/dist/jquery.min.js"></script>
+    </head>
+    <body>  
+        <div id="divHachiko" class="row col-12" 
+            style="margin-left: 0px;margin-right: 0px;padding: 0px;>
+            <div id="cardHachiko" class="card" style="background-color: white;padding: 0px;border: none;">
+                <div id="cardHeaderHachiko" class="card-header" 
+                style="background-color: white;padding: 5px;border:none;font-size: 12px;">
+                    <label>The <strong style="font-style: italic;">Hachiko</strong> microApp</label>
+                </div>
+                <div id="cardBodyHachiko" class="row card-body" style="margin:0px;padding: 5px;background-color: white;">
+                    <div id="cardBodyLeftColHachiko" class="col-4" style="padding: 0px;display: flex;">
+                        <img id="imgHachiko" src="http://localhost:11000/ref/images/Hachiko2.jpeg" style="border-radius:50%;width:100%;" />
+                    </div> 
+                    <div id="cardBodyRightColHachiko" class="col-8" style="padding: 0px 0px 0px 5px;">
+                        <div id="cardBodyHachikoDetailsRow1" class="row col-12" style="margin-left: 0px;margin-right: 0px;padding: 0px;border-bottom: 1px solid darkgray;">
+                            <div id="cardBodyHachikoDetailsRow1Col1" class="col-6" style="font-size: 10px;text-align: right;font-family: candara;padding: 2px 2px 2px 0px;">Name:</div>
+                            <div id="cardBodyHachikoDetailsRow1Col2" class="col-6" style="font-size: 10px;text-align: left;font-family: candara;padding: 2px 2px 2px 0px;"></div>
+                        </div>
+                        <div id="cardBodyHachikoDetailsRow2" class="row col-12" style="margin-left: 0px;margin-right: 0px;padding: 0px;border-bottom: 1px solid darkgray;">
+                            <div id="cardBodyHachikoDetailsRow2Col1" class="col-6" style="font-size: 10px;text-align: right;font-family: candara;padding: 2px 2px 2px 0px;">Date of birth:</div>
+                            <div id="cardBodyHachikoDetailsRow2Col2" class="col-6" style="font-size: 10px;text-align: left;font-family: candara;padding: 2px 2px 2px 0px;"></div>
+                        </div>
+                        <div id="cardBodyHachikoDetailsRow3" class="row col-12" style="margin-left: 0px;margin-right: 0px;padding: 0px;border-bottom: 1px solid darkgray;">
+                            <div id="cardBodyHachikoDetailsRow3Col1" class="col-6" style="font-size: 10px;text-align: right;font-family: candara;padding: 2px 2px 2px 0px;">Address:</div>
+                            <div id="cardBodyHachikoDetailsRow3Col2" class="col-6" style="font-size: 10px;text-align: left;font-family: candara;padding: 2px 2px 2px 0px;"></div>
+                        </div>
+                        <div id="cardBodyHachikoDetailsRow4" class="row col-12" style="margin-left: 0px;margin-right: 0px;padding: 0px;border-bottom: 1px solid darkgray;">
+                            <div id="cardBodyHachikoDetailsRow4Col1" class="col-6" style="font-size: 10px;text-align: right;font-family: candara;padding: 2px 2px 2px 0px;">Citizenship:</div>
+                            <div id="cardBodyHachikoDetailsRow4Col2" class="col-6" style="font-size: 10px;text-align: left;font-family: candara;padding: 2px 2px 2px 0px;"></div>
+                        </div>
+                    </div>                   
+                </div>
+                <div id="cardFooterHachiko" class="card-footer" style="padding: 5px;border:none;background-color: white;">
+                    <label style="font-size: 8px;font-weight:bold;color:red;">I have microUI in JQuery, microServer in NodeJS, microDatabase in JSON.</label>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                let url = 'http://localhost:20000/api/hachiko'; // microServer of hachiko
+                fetch(url)
+                    .then(res => res.json())
+                    .then(data => {
+                        $('#cardBodyHachikoDetailsRow1Col2').text(data.hachiko.name);
+                        $('#cardBodyHachikoDetailsRow2Col2').text(data.hachiko.dob);
+                        $('#cardBodyHachikoDetailsRow3Col2').text(data.hachiko.address);
+                        $('#cardBodyHachikoDetailsRow4Col2').text(data.hachiko.nationality);
+                    });                 
+            });
+        </script>
+    </body>
+</html>
