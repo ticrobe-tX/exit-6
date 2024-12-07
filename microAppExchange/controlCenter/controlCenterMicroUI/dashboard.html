@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The PoC of the MicroApp Pattern">
+    <meta name="author" content="Suresh Babu Banda">
+    <title>The MicroAppPattern<sup>&#169;</sup></title>
+
+    <link rel="stylesheet" type="text/css" href="./ref/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./ref/bootstrap/dist/css/bootstrap.min.css">  
+      
+    <script src="./ref/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./ref/jquery/dist/jquery.min.js"></script>
+</head>
+<body style="display: block;">
+    <div id="divDashboard" class="row col-12" style="margin-left: 0px;margin-right: 0px;padding: 5px;">
+        <div id="cardDashboard" class="card" style="background-color: white;padding: 0px;border: none;">
+            <div id="cardHeaderDashboard" class="card-header" style="padding: 5px;border:none;">
+                <img src="ref/logo.png" style="width:50px;height:25px;border-radius:50%;" />
+                <label>The microAppPattern<sup>&#169;</sup>-PoC-<strong style="font-size: 10px;font-weight:bold;color:red;">22.1</strong></label>
+            </div>
+            <div id="cardBodyDashboard" class="card-body" style="margin:0px;padding: 0px;">
+                <div id="divDashboardBodyRow1" class="row col-12" style="margin-left: 0px;margin-right: 0px;padding: 0px;">
+                    <div id="cardBodyRow1LeftColDashboard" class="col-4" style="padding:0px;">
+                        <div id="microAppHachiko"  style="padding:0px;box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1),16px 16px 20px 0px rgba(0,0,0,0.1);"></div>
+                    </div> 
+                    <div id="cardBodyRow1RightColDashboard" class="col-8" style="padding:0px 0px 0px 5px;">
+                        <div id="microAppPizza"  style="padding:0px;box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1),16px 16px 20px 0px rgba(0,0,0,0.1);"></div>
+                    </div>
+                </div>
+                <div id="divDashboardBodyRow2" class="row col-12" style="margin-left: 0px;margin-right: 0px;padding: 0px;">
+                    <div id="cardBodyRow2LeftColDashboard" class="col-12" style="margin-top: 5px;padding:0px;">
+                        <div id="microAppOrders"  style="background: #f8f9fa;padding:0px;box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1),16px 16px 20px 0px rgba(0,0,0,0.1);"></div>
+                    </div> 
+                </div>             
+            </div>
+            <div id="cardFooterDashboard" class="card-footer row col-12" style="padding: 5px;border:none;margin:0px;">
+                <div id="cardFooterDashboardRow1" class="row col-12" style="margin-left: 0px;margin-right: 0px;padding: 0px;">
+                    <label style="font-size: 10px;font-weight:bold;padding:20px 10px 10px 10px;">
+                        Read more of the microAppPattern<sup>&#169;</sup> @ 
+                        <a href="https://www.linkedin.com/pulse/microapp-pattern-10-suresh-banda/" style="text-decoration:none;"><strong>LinkedIn</strong></a>,
+                        <a href="https://twitter.com/hashtag/MicroAppPattern" style="text-decoration:none;"><strong>Twitter</strong></a>
+                        and <a href="https://medium.com/@techist007/the-microapp-pattern-1-0-e6cb1296105e" style="text-decoration:none;"><strong>Medium</strong></a>
+                    </label>
+                </div>
+                <div id="cardFooterDashboardRow2" class="row col-12" style="margin-left: 0px;margin-right: 0px;padding: 0px;">
+                    <div id="cardFooterDashboardLeftCol" class="col-6" style="margin-top: 5px;padding:0px;">
+                        <label style="font-size: 10px;font-weight:bold;color:red;padding: 10px;">2022.  Techist solutions.  All copy rights reserved.</label>
+                    </div>
+                    <div id="cardFooterDashboardRightCol" class="col-6" style="margin-top: 5px;padding:0px;text-align: end;">
+                        <label style="font-size: 10px;font-weight:bold;">The microAppPattern<sup>&#169;</sup> is dedicated to 
+                            <strong style="color:red;font-size: 10px;font-weight:bold;">
+                                <a href="https://en.wikipedia.org/wiki/Hachik%C5%8D" style="color:red;text-decoration:none;">Hachiko</a>
+                            </strong>
+                        </label>
+                    </div> 
+                </div>                               
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('#microAppHachiko').load('http://localhost:11000/hachiko.html');
+            $('#microAppPizza').load('http://localhost:3000');
+            $('#microAppOrders').load('http://localhost:5173');
+        });
+    </script>
+</body>
+</html>
