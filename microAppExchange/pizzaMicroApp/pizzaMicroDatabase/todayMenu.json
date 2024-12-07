@@ -1,0 +1,12 @@
+{
+    "menuOfTheDay": [
+        {
+            "id": "#1"
+            , "name": "Cheese pizza"
+        }
+        , {
+            "id": "#2"
+            , "name": "Extra Cheese pizza"
+        }
+    ]
+}
